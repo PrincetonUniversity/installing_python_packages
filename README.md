@@ -289,10 +289,21 @@ Both <a href="https://packaging.python.org/tutorials/packaging-projects/">PyPI</
 <a href="https://fenicsproject.org">FEniCS</a> is an open-source computing platform for solving partial differential equations. To install:
 
 ```
+module load anaconda3
+conda create --name fencis-env -c conda-forge fenics
+conda activate fencis-env
+```
+
+For better performance one may consider <a href="https://fenics.readthedocs.io/en/latest/installation.html#from-source">installing from source</a>.
+
+### Common pip
+
+```
+module load anaconda3
 mkdir <your-fenics-env>
 virtualenv <your-fenics-env>
 source </path/to>/<your-fenics-env>/bin/activate
-pip install fenics
+pip install <package>
 ```
 
 Make sure you include `source </path/to>/<your-fenics-env>/bin/activate` in your Slurm script.
