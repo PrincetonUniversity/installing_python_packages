@@ -342,6 +342,22 @@ conda activate torch-env
 
 For more on getting starting with PyTorch on the HPC clusters see <a href="https://github.com/PrincetonUniversity/install_pytorch">here</a>.
 
+### mpi4py
+
+MPI for Python (mpi4py) provides bindings of the Message Passing Interface (MPI) standard for the Python programming language. It can be used to parallelize Python scripts. To install:
+
+```
+module load anaconda3
+conda create --name fast-mpi4py python=3.7
+conda activate fast-mpi4py
+module load intel-mpi intel
+export MPICC=`which mpicc`
+pip install mpi4py
+```
+
+A complete guide on installing mpi4py on the HPC clusters is <a href="https://oncomputingwell.princeton.edu/2018/11/installing-and-running-mpi4py-on-the-cluster">here</a>.
+
+
 ## FAQ
 
 1. Why does `pip install <package>` fail with an error mentioning a `Read-only file system`?
