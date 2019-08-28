@@ -290,8 +290,8 @@ Both <a href="https://packaging.python.org/tutorials/packaging-projects/">PyPI</
 
 ```
 module load anaconda3
-conda create --name fencis-env -c conda-forge fenics
-conda activate fencis-env
+conda create --name fenics-env -c conda-forge fenics
+conda activate fenics-env
 ```
 
 For better performance one may consider <a href="https://fenics.readthedocs.io/en/latest/installation.html#from-source">installing from source</a>.
