@@ -355,7 +355,7 @@ export MPICC=`which mpicc`
 pip install mpi4py
 ```
 
-A complete guide on installing mpi4py on the HPC clusters is <a href="https://oncomputingwell.princeton.edu/2018/11/installing-and-running-mpi4py-on-the-cluster">here</a>.
+Be sure to include `module load anaconda3 intel-mpi intel` in your Slurm script. A complete guide on installing mpi4py on the HPC clusters is <a href="https://oncomputingwell.princeton.edu/2018/11/installing-and-running-mpi4py-on-the-cluster">here</a>.
 
 
 ## FAQ
