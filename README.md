@@ -260,7 +260,7 @@ Much more can be done with conda as a <a href="https://docs.conda.io/projects/co
 
 ### pip vs. conda
 
-If your package exists on PyPI and Anaconda Cloud then how do you decide which to install from? The good news is that in most cases it doesn't matter. However, if you are on Windows then you should prefer conda since the packages are pre-built. For Linux if it is a simple package that doesn't do intensive computations then `pip` would be a good choice. If the package needs to be fast or if the dependencies are quite involved then favor `conda`. Many conda packages are linked to Intel MKL which leads to improved performance over pip installs. Conda packages may lag behind pip packages in terms of versioning.
+If your package exists on PyPI and Anaconda Cloud then how do you decide which to install from? The good news is that in most cases it doesn't matter. However, if you are on Windows then you should prefer conda since the packages are pre-built. For Linux if it is a simple package that doesn't do intensive computations then `pip` would be a good choice. If the package needs to be fast or if the dependencies are quite involved then favor `conda`. Because conda packages are pre-compiled, they cannot take full advantage of the vector instructions of our CPUs. However, many scientific conda packages are linked to the Intel MKL which leads to improved performance over pip installs. Conda packages may lag behind pip packages in terms of versioning.
 
 
 ## Installing Python packages from source
@@ -339,7 +339,7 @@ conda activate tf-cpu
 
 Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script on the GPU clusters. `conda activate tf-cpu` is required on the CPU clusters (Perseus and Della).
 
-Conda is the suggested method because it includes the dependencies and links to Intel MKL. For more on getting starting with TensorFlow on the HPC clusters see <a href="https://github.com/PrincetonUniversity/slurm_mnist">here</a>.
+Conda is the suggested installation method because TensorFlow has many complex dependencies and it links to Intel MKL for increased performance. For more on getting starting with TensorFlow on the HPC clusters see <a href="https://github.com/PrincetonUniversity/slurm_mnist">here</a>.
 
 ### PyTorch
 
