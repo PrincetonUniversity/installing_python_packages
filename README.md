@@ -310,36 +310,7 @@ Make sure you include `source </path/to>/<your-fenics-env>/bin/activate` in your
 
 ### TensorFlow
 
-<a href="https://www.tensorflow.org">TensorFlow</a> is a popular deep learning library for training artificial neural networks. The installation instructions depend on the cluster.
-
-#### Adroit or TigerGPU
-
-```
-module load anaconda3
-conda create --name tf-gpu tensorflow-gpu
-conda activate tf-gpu
-```
-
-#### Traverse
-
-```
-module load anaconda3
-conda create --name=tf-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda/ tensorflow-gpu
-conda activate tf-gpu
-# accept the license agreement
-```
-
-#### Perseus or Della
-
-```
-module load anaconda3
-conda create --name tf-cpu tensorflow
-conda activate tf-cpu
-```
-
-Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script on the GPU clusters. `conda activate tf-cpu` is required on the CPU clusters (Perseus and Della).
-
-Conda is the suggested installation method because TensorFlow has many complex dependencies and it links to Intel MKL for increased performance. For more on getting starting with TensorFlow on the HPC clusters see <a href="https://github.com/PrincetonUniversity/slurm_mnist">here</a>.
+See <a href="https://github.com/PrincetonUniversity/slurm_mnist">this page</a> to install TensorFlow on the HPC clusters.
 
 ### PyTorch
 
