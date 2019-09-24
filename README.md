@@ -358,9 +358,9 @@ Be sure to include `module load anaconda3 intel-mpi intel` in your Slurm script.
 
    conda is a system executable. You do not have permission to update it. If you try to update it you will get this error: `EnvironmentNotWritableError: The current user does not have write permissions to the target environment`. The current version is sufficient to install any package.
 
-5. When I run `conda list` I see the package that I need but it is not the right version. How I can I get the right version?
+5. When I run `conda list` I see the package that I need but it is not the right version. How can I get the right version?
    
-   One solution is to create a conda environment and install the version you need there. The version of NumPy on Tiger is 1.16.2. If you need version 1.16.5 for your work then do : `conda create --name myenv numpy=1.16.5`. 
+   One solution is to create a conda environment and install the version you need there. The version of NumPy on Tiger is 1.16.2. If you need version 1.16.5 for your work then do: `conda create --name myenv numpy=1.16.5`. 
 
 6. Is it okay if I combine virtualenv and conda?
 
