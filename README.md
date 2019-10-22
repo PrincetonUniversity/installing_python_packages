@@ -392,7 +392,3 @@ Be sure to include `module load anaconda3 intel-mpi intel` in your Slurm script.
 ## <a name="getting_help">Getting Help<a>
 
 If you encounter any difficulties while installing a Python package on one of our HPC clusters then please send an email to <a href="mailto:cses@princeton.edu">cses@princeton.edu</a> or attend a <a href="https://researchcomputing.princeton.edu/education/help-sessions">help session</a>.
-
-## Acknowledgements
-
-Kyle Felker has made improvements to this page.
