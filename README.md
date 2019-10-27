@@ -355,7 +355,7 @@ Be sure to include `module load anaconda3 intel-mpi intel` in your Slurm script.
 
    You have three options. First, consider removing files within your home directory to make space available. Second, run the `checkquota` command and follow the link at the bottom to request more space. Lastly, for pip installations see the question toward the bottom of this FAQ for a third possibility i.e., setting `--location to /scratch/gpfs/<username>`.
 
-3. Why do get the following error message when I try to run pip on Della: `-bash: pip: command not found`?
+3. Why do I get the following error message when I try to run pip on Della: `-bash: pip: command not found`?
 
    You need to do `module load anaconda3` before using pip or any of the Anaconda packages. You also need to load this module before using Python itself.
 
@@ -382,7 +382,7 @@ Be sure to include `module load anaconda3 intel-mpi intel` in your Slurm script.
    
    Note that `--user` is omitted when using pip within a conda environment.
 
-8. How do I install a Python package using pip in a custom location?
+8. How do I install a Python package in a custom location using pip?
 
    There is a two step procedure for this. First do `pip install --target=</path/to/install/location> <package>` then update the PYTHONPATH environment variable with `export PYTHONPATH=$PYTHONPATH:/path/to/install/location`.
 
