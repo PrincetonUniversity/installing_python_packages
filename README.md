@@ -81,7 +81,7 @@ conda list
 The start of the output is shown below:
 
 ```
-[jdh4@tigergpu ~]$ conda list
+$ conda list
 WARNING: The conda.compat module is deprecated and will be removed in a future release.
 # packages in environment at /usr/licensed/anaconda3/2019.3:
 #
