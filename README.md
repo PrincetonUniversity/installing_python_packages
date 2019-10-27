@@ -19,12 +19,14 @@ pip install --user <package>
 
 The package and its dependencies will be installed in your home directory in `~/.local/lib/python<version>/site-packages`. Below is a sample Slurm script (job.slurm) that can be used to run your Python script (myscript.py):
 
-```
+```bash
 #!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --time=00:01:00
-#SBATCH --mem-per-cpu=4G
+#SBATCH --job-name=py-job        # create a short name for your job
+#SBATCH --nodes=1                # node count
+#SBATCH --ntasks=1               # total number of tasks across all nodes
+#SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G is default)
+#SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
 
 module load anaconda3
 srun python myscript.py
@@ -46,15 +48,18 @@ conda activate myenv
 
 The package will be installed locally in `~/.conda/pkgs`. On the command line, use `conda deactivate` to leave the environment. Below is a sample Slurm script:
 
-```
+```bash
 #!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1
-#SBATCH --time=00:01:00
-#SBATCH --mem-per-cpu=4G
+#SBATCH --job-name=py-job        # create a short name for your job
+#SBATCH --nodes=1                # node count
+#SBATCH --ntasks=1               # total number of tasks across all nodes
+#SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
+#SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G is default)
+#SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
 
 module load anaconda3
 conda activate myenv
+
 srun python myscript.py
 ```
 
