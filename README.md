@@ -1,4 +1,4 @@
-# Installing Python Packages on the PU HPC Clusters
+# Installing Python Packages on the HPC Clusters
 
 This guide presents an overview of installing Python packages on the HPC clusters at Princeton.
 
