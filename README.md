@@ -319,15 +319,7 @@ See <a href="https://github.com/PrincetonUniversity/slurm_mnist">this page</a> t
 
 ### PyTorch
 
-<a href="https://pytorch.org">PyTorch</a> is a popular alternative to TensorFlow. To install it in your account:
-
-```
-module load anaconda3
-conda create --name torch-env pytorch torchvision cudatoolkit=9.0 -c pytorch
-conda activate torch-env
-```
-
-For more on getting starting with PyTorch on the HPC clusters see <a href="https://github.com/PrincetonUniversity/install_pytorch">here</a>.
+See <a href="https://github.com/PrincetonUniversity/install_pytorch">this page</a> to install PyTorch on the HPC clusters.
 
 ### mpi4py
 
