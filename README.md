@@ -82,22 +82,22 @@ The start of the output is shown below:
 
 ```
 $ conda list
-WARNING: The conda.compat module is deprecated and will be removed in a future release.
-# packages in environment at /usr/licensed/anaconda3/2019.3:
+# packages in environment at /usr/licensed/anaconda3/2019.10:
 #
 # Name                    Version                   Build  Channel
 _ipyw_jlab_nb_ext_conf    0.1.0                    py37_0  
+_libgcc_mutex             0.1                        main  
 alabaster                 0.7.12                   py37_0  
-anaconda                  2019.03                  py37_0  
+anaconda                  2019.10                  py37_0  
 anaconda-client           1.7.2                    py37_0  
 anaconda-navigator        1.9.7                    py37_0  
-anaconda-project          0.8.2                    py37_0  
-asn1crypto                0.24.0                   py37_0  
-astroid                   2.2.5                    py37_0  
+anaconda-project          0.8.3                      py_0  
+asn1crypto                1.0.1                    py37_0  
+astroid                   2.3.1                    py37_0
 ...
 ```
 
-There are about 275 packages pre-installed and ready to be used with a simple `import` statement. If the packages you need are on the list or are found in the standard library then you can begin your work. Otherwise, you will need to do an installation.
+There are about 291 packages pre-installed and ready to be used with a simple `import` statement. If the packages you need are on the list or are found in the standard library then you can begin your work. Otherwise, you will need to do an installation.
 
 Anaconda is a system library. This means you can use all the packages but you can't make any modifications to them (such as an upgrade) and you can't install new ones in their location. You can however install whatever packages you want in your home directory. This allows you to utilize both the pre-installed Anaconda packages and new ones that you install yourself. The two most popular package managers for installing Python packages are `pip` and `conda`.
 
