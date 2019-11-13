@@ -169,7 +169,9 @@ For more on pip see <a href="https://pip.pypa.io/en/stable/user_guide/">here</a>
 Often times you will want to create isolated Python environments. This is useful, for instance, when you have two packages that require different versions of a third package. The use of environments saves one the trouble of repeatedly upgrading or downgrading the third package in this case.
 
 We recommend use `virtualenv` to create isolated Python environments. To get started with virtualenv it must first be installed as follows:
+
 ```
+module load anaconda3
 pip install --user virtualenv
 ```
 
