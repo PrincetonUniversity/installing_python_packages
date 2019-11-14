@@ -389,7 +389,7 @@ Be sure to include `module load anaconda3 intel-mpi intel` in your Slurm script.
    
 10. How are my pip packages built? Which optimization flags? Do I have to be careful on Della where the head node is Broadwell?
 
-    See `/usr/bin/python3.7-config --cflags`. To force a package to be built from source with certain optimization flags do, for example: `CFLAGS="-O1" pip install numpy -vvv --no-binary=numpy`
+    After loading the anaconda3 module, run this command: `python3.7-config --cflags`. To force a package to be built from source with certain optimization flags do, for example: `CFLAGS="-O1" pip install numpy -vvv --no-binary=numpy`
 
 ## <a name="getting_help">Getting Help<a>
 
