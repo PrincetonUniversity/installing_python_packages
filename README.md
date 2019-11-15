@@ -116,7 +116,7 @@ astroid                   2.3.1                    py37_0
 ...
 ```
 
-There are 291 packages pre-installed and ready to be used with a simple `import` statement. If the packages you need are on the list or are found in the standard library then you can begin your work. Otherwise, you will need to install them.
+There are 291 packages pre-installed and ready to be used with a simple `import` statement. If the packages you need are on the list or are found in the Python standard library then you can begin your work. Otherwise, keep reading to learn how to install them.
 
 Anaconda is a system library. This means you can use all the packages but you can't make any modifications to them (such as an upgrade) and you can't install new ones in their location. You can however install whatever packages you want in your home directory. This allows you to utilize both the pre-installed Anaconda packages and new ones that you install yourself. The two most popular package managers for installing Python packages are `pip` and `conda`.
 
