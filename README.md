@@ -144,7 +144,7 @@ Could not install packages due to an EnvironmentError: [Errno 30] Read-only file
 
 pip will search for a pre-compiled version of the package you want called a wheel. If it fails to finds this for your platform then it will attempt to build the package from source. It can take pip several minutes to build a large package from source.
 
-One often needs to load various environment modules in addition to `anaconda3` before doing a pip install. For instance, if your package uses GPUs then you will probably need to do `$ module load cudatoolkit` or if it uses the message-passing interface (MPI) for parallelization then `module load openmpi`. To see all available software modules, run `$ module avail`.
+One often needs to load various environment modules in addition to `anaconda3` before doing a pip install. For instance, if your package uses GPUs then you will probably need to do `$ module load cudatoolkit` or if it uses the message-passing interface (MPI) for parallelization then `$ module load openmpi`. To see all available software modules, run `$ module avail`.
 
 ### Common pip commands
 
@@ -235,7 +235,7 @@ As an alternative to `virtualenv`, you may consider using the built-in Python 3 
 
 Unlike pip, conda is both a package manager and an environment manager. It is also language-agnostic which means that in addition to Python packages, it is also used for R and Fortran, for example.
 
-Conda looks to <a href="https://anaconda.org">Anaconda Cloud</a> to handle installation requests but there are numerous other channels that can be searched such as bioconda.
+Conda looks to the main channel of <a href="https://anaconda.org">Anaconda Cloud</a> to handle installation requests but there are numerous other channels that can be searched such as `bioconda`, `intel` and `conda-forge`.
 
 Conda always installs pre-built binary files. The software it provides often has performance advantages over other managers due to leveraging Intel MKL, for instance. Below is a typical session where an environment is created and a package is installed in to it:
 
@@ -245,16 +245,16 @@ $ conda create --name myenv <package>
 $ conda activate myenv
 ```
 
-To leave a conda environment use `conda deactivate`.
+To leave a conda environment use `$ conda deactivate`.
 
 If you try to install using `conda install <package>` it will fail with `EnvironmentNotWritableError: The current user does not have write permissions to the target environment`. The solution is to create an environment and do the install in the same command (as shown above).
 
-Below is a primer which illustrates the most common uses of conda:
+### Common conda commands
 
-Search Anaconda Cloud for the fenics package:
+Search the `conda-forge` channel for the fenics package:
 
 ```
-$ conda search fenics
+$ conda search fenics --channel conda-forge
 ```
 
 List all the installed packages for the present environment:
@@ -308,7 +308,7 @@ In some cases you will be provided with the source code for your package. To ins
 $ python setup.py install --prefix=</path/to/install/location>
 ```
 
-Be sure to update the appropriate environment variables:
+Be sure to update the appropriate environment variables in your `~/.bashrc` file:
 
 ```
 export PATH=</path/to/install/location>/bin:$PATH
