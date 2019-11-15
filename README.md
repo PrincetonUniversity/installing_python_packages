@@ -2,7 +2,7 @@
 
 This guide presents an overview of installing Python packages on the HPC clusters at Princeton.
 
-Throughout this guide we use angular brackets `< >` to denote command line options that you should replace with a value specific to your work. Commands preceded by '$' are to be run on the command line.
+Throughout this guide we use angular brackets `< >` to denote command line options that you should replace with a value specific to your work. Commands preceded by the $ character are to be run on the command line.
 
 ## Quick Start
 
