@@ -245,7 +245,7 @@ $ conda create --name myenv <package>
 $ conda activate myenv
 ```
 
-To leave a conda environment use `$ conda deactivate`.
+To leave a conda environment: `$ conda deactivate`.
 
 If you try to install using `conda install <package>` it will fail with `EnvironmentNotWritableError: The current user does not have write permissions to the target environment`. The solution is to create an environment and do the install in the same command (as shown above).
 
@@ -297,8 +297,7 @@ Much more can be done with conda as a <a href="https://docs.conda.io/projects/co
 
 ### pip vs. conda
 
-If your package exists on PyPI and Anaconda Cloud then how do you decide which to install from? The good news is that in most cases it doesn't matter. However, if you are on Windows then you should prefer conda since the packages are pre-built. For Linux if it is a simple package that doesn't do intensive computations then `pip` would be a good choice. If the package needs to be fast or if the dependencies are quite involved then favor `conda`. Because conda packages are pre-compiled, they cannot take full advantage of the vector instructions of our CPUs. However, many scientific conda packages are linked to the Intel MKL which leads to improved performance over pip installs. Conda packages may lag behind pip packages in terms of versioning.
-
+If your package exists on PyPI and Anaconda Cloud then how do you decide which to install from? The good news is that in most cases it doesn't matter. However, if you are on Windows then you should prefer conda since the packages are pre-built. For Linux if it is a simple package that doesn't do intensive computations then `pip` would be a good choice. If the package needs to be fast or if the dependencies are quite involved then favor `conda`. Because conda packages are pre-compiled, they cannot take full advantage of the vector instructions of our CPUs. However, many scientific conda packages are linked to the Intel MKL which leads to improved performance over pip installs. Conda packages may lag behind pip packages in terms of versioning. In many cases, the developers of the package will make a recommendation on their website.
 
 ## Installing Python packages from source
 
@@ -423,9 +422,18 @@ Be sure to include `module load anaconda3 openmpi/gcc/3.1.3/64` in your Slurm sc
 
    Yes. Packages installed by pip are in `.local/lib` while conda packages and environments are in `.conda`. If you made any environments with virtualenv you should remove those as well. Removing these directories will give you a clean start. Be sure to examine the contents first. It may be wise to selectively remove sub-directories instead.
    
-10. How are my pip packages built? Which optimization flags? Do I have to be careful on Della where the head node is Broadwell?
+10. How are my pip packages built? Which optimization flags are used? Do I have to be careful with vectorization on Della where several different CPUs are in play?
 
     After loading the anaconda3 module, run this command: `python3.7-config --cflags`. To force a package to be built from source with certain optimization flags do, for example: `CFLAGS="-O1" pip install numpy -vvv --no-binary=numpy`
+
+11. What is the Intel Python distribution and how do I get started with it?
+
+   Intel provides their own implementation of Python as well as numerous package optimized for Intel hardware. You may find significant performance benefits. The Intel Python interpreter does not use GNU readline so most find it awkward to use. To create a conda environment with Intel Python and some numerics packages:
+   
+   ```
+   $ module load anaconda3
+   $ conda create --name my-intel --channel intel python numpy scipy 
+   ```
 
 ## <a name="getting_help">Getting Help<a>
 
