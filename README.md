@@ -2,7 +2,7 @@
 
 This guide presents an overview of installing Python packages on the HPC clusters at Princeton.
 
-Note: throughout this guide we use angular brackets `< >` to denote command line options that you should replace with a value specific to your work.
+Throughout this guide we use angular brackets `< >` to denote command line options that you should replace with a value specific to your work. Commands preceded by '$' are to be run on the command line.
 
 ## Quick Start
 
@@ -32,7 +32,7 @@ module load anaconda3
 srun python myscript.py
 ```
 
-The job is submitted to the cluster with: `sbatch job.slurm`. Note that the `anaconda3` module is loaded in the Slurm script.
+The job is submitted to the cluster with: `$ sbatch job.slurm`. Note that the `anaconda3` module is loaded in the Slurm script.
 
 If the installation failed and packages were downloaded then you should remove those packages before proceeding (see contents of `~/.local/lib/`).
 
@@ -46,7 +46,7 @@ $ conda create --name myenv <package>
 $ conda activate myenv
 ```
 
-The package will be installed locally in `~/.conda/pkgs`. On the command line, use `conda deactivate` to leave the environment. Below is a sample Slurm script:
+The package will be installed locally in `~/.conda/pkgs`. On the command line, use `$ conda deactivate` to leave the environment and return to the base environment. Below is a sample Slurm script:
 
 ```bash
 #!/bin/bash
@@ -78,18 +78,26 @@ $ which python
 /usr/bin/python
 ```
 
-We see that it is an old version. 
+We see that it is an old version and it is installed in a standard system directory.
 
 On the Princeton HPC clusters we offer the Anaconda Python distribution. In addition to Python's vast built-in <a href="https://docs.python.org/3/library/">library</a>, Anaconda provides hundreds of additional packages which are ideal for scientific computing. In fact, many of these packages are optimized for our hardware.
 
-To see all the Anaconda packages that are available and their versions do:
+To make Anaconda Python available, run the following command:
 
 ```
 $ module load anaconda3
-$ conda list
 ```
 
-The start of the output is shown below:
+Let's inspect this Python using the same commands as above:
+
+```
+$ python --version
+Python 3.7.4
+$ which python
+/usr/licensed/anaconda3/2019.10/bin/python
+```
+
+We now have an updated version of Python and related tools. To see all the pre-installed Anaconda packages and their versions use the `conda list` command:
 
 ```
 $ conda list
@@ -108,16 +116,7 @@ astroid                   2.3.1                    py37_0
 ...
 ```
 
-Let's confirm that by loading the Anaconda3 module that we get an updated version of Python:
-
-```
-$ python --version
-Python 3.7.4
-$ which python
-/usr/licensed/anaconda3/2019.10/bin/python
-```
-
-There are about 291 packages pre-installed and ready to be used with a simple `import` statement. If the packages you need are on the list or are found in the standard library then you can begin your work. Otherwise, you will need to do an installation.
+There are 291 packages pre-installed and ready to be used with a simple `import` statement. If the packages you need are on the list or are found in the standard library then you can begin your work. Otherwise, you will need to install them.
 
 Anaconda is a system library. This means you can use all the packages but you can't make any modifications to them (such as an upgrade) and you can't install new ones in their location. You can however install whatever packages you want in your home directory. This allows you to utilize both the pre-installed Anaconda packages and new ones that you install yourself. The two most popular package managers for installing Python packages are `pip` and `conda`.
 
