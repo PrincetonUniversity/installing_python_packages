@@ -69,6 +69,17 @@ If for some reason you are trying to install a Python 2 package then use `module
 
 ## Introduction
 
+When you first ssh to a one of our clusters, the system Python is available but this is almost always not what you want. To see the system Python run these commands:
+
+```
+$ python --version
+Python 2.7.5
+$ which python
+/usr/bin/python
+```
+
+We see that it is an old version. 
+
 On the Princeton HPC clusters we offer the Anaconda Python distribution. In addition to Python's vast built-in <a href="https://docs.python.org/3/library/">library</a>, Anaconda provides hundreds of additional packages which are ideal for scientific computing. In fact, many of these packages are optimized for our hardware.
 
 To see all the Anaconda packages that are available and their versions do:
@@ -95,6 +106,15 @@ anaconda-project          0.8.3                      py_0
 asn1crypto                1.0.1                    py37_0  
 astroid                   2.3.1                    py37_0
 ...
+```
+
+Let's confirm that by loading the Anaconda3 module that we get an updated version of Python:
+
+```
+$ python --version
+Python 3.7.4
+[jdh4@tigercpu ~]$ which python
+/usr/licensed/anaconda3/2019.10/bin/python
 ```
 
 There are about 291 packages pre-installed and ready to be used with a simple `import` statement. If the packages you need are on the list or are found in the standard library then you can begin your work. Otherwise, you will need to do an installation.
