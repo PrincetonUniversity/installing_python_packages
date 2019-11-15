@@ -244,13 +244,15 @@ Unlike pip, conda is both a package manager and an environment manager. It is al
 
 Conda looks to the main channel of <a href="https://anaconda.org">Anaconda Cloud</a> to handle installation requests but there are numerous other channels that can be searched such as `bioconda`, `intel` and `conda-forge`.
 
-Conda always installs pre-built binary files. The software it provides often has performance advantages over other managers due to leveraging Intel MKL, for instance. Below is a typical session where an environment is created and a package is installed in to it:
+Conda always installs pre-built binary files. The software it provides often has performance advantages over other managers due to leveraging Intel MKL, for instance. Below is a typical session where an environment is created and one or more packages are installed in to it:
 
 ```
 $ module load anaconda3
-$ conda create --name myenv <package>
+$ conda create --name myenv <package-1> <package-2>
 $ conda activate myenv
 ```
+
+Note that you should specify all the packages that you need in one line so that the dependencies can satisfied simultaneously. Installing packages at a later time is possible but should be avoided if possible.
 
 To leave a conda environment: `$ conda deactivate`.
 
