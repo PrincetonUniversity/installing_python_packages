@@ -403,7 +403,7 @@ Be sure to include `module load anaconda3 openmpi/gcc/3.1.3/64` in your Slurm sc
    $ pip install scitools
    ```
    
-   Note that `--user` is omitted when using pip within a conda environment.
+   Note that `--user` is omitted when using pip within a conda environment. See the bullet points at the bottom of [this page](https://www.anaconda.com/using-pip-in-a-conda-environment/) for tips on using this approach.
 
 8. How do I install a Python package in a custom location using pip or conda?
 
