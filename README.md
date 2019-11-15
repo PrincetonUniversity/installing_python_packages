@@ -74,6 +74,7 @@ When you first login to a one of our clusters, the system Python is available bu
 ```
 $ python --version
 Python 2.7.5
+
 $ which python
 /usr/bin/python
 ```
@@ -93,6 +94,7 @@ Let's inspect our newly loaded Python by using the same commands as above:
 ```
 $ python --version
 Python 3.7.4
+
 $ which python
 /usr/licensed/anaconda3/2019.10/bin/python
 ```
@@ -257,7 +259,7 @@ Search the `conda-forge` channel for the fenics package:
 $ conda search fenics --channel conda-forge
 ```
 
-List all the installed packages for the present environment:
+List all the installed packages for the present environment (consider adding `--explicit`):
 
 ```
 $ conda list
