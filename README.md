@@ -46,7 +46,7 @@ $ conda create --name myenv <package>
 $ conda activate myenv
 ```
 
-The package will be installed locally in `~/.conda/pkgs`. On the command line, use `$ conda deactivate` to leave the environment and return to the base environment. Below is a sample Slurm script:
+The package will be installed locally in `~/.conda/pkgs`. On the command line, use `$ conda deactivate` to leave the active environment and return to the base environment. Below is a sample Slurm script:
 
 ```bash
 #!/bin/bash
@@ -69,7 +69,7 @@ If for some reason you are trying to install a Python 2 package then use `module
 
 ## Introduction
 
-When you first ssh to a one of our clusters, the system Python is available but this is almost always not what you want. To see the system Python run these commands:
+When you first login to a one of our clusters, the system Python is available but this is almost always not what you want. To see the system Python, run these commands:
 
 ```
 $ python --version
@@ -88,7 +88,7 @@ To make Anaconda Python available, run the following command:
 $ module load anaconda3
 ```
 
-Let's inspect this Python using the same commands as above:
+Let's inspect our newly loaded Python by using the same commands as above:
 
 ```
 $ python --version
@@ -116,15 +116,15 @@ astroid                   2.3.1                    py37_0
 ...
 ```
 
-There are 291 packages pre-installed and ready to be used with a simple `import` statement. If the packages you need are on the list or are found in the Python standard library then you can begin your work. Otherwise, keep reading to learn how to install them.
+There are 291 packages pre-installed and ready to be used with a simple `import` statement. If the packages you need are on the list or are found in the Python standard library then you can begin your work. Otherwise, keep reading to learn how to install packages.
 
-Anaconda is a system library. This means you can use all the packages but you can't make any modifications to them (such as an upgrade) and you can't install new ones in their location. You can however install whatever packages you want in your home directory. This allows you to utilize both the pre-installed Anaconda packages and new ones that you install yourself. The two most popular package managers for installing Python packages are `pip` and `conda`.
+Anaconda Python is a system library. This means that you can use all the packages but you can't make any modifications to them (such as an upgrade) and you can't install new ones in their location. You can however install whatever packages you want in your home directory. This allows you to utilize both the pre-installed Anaconda packages and the new ones that you install yourself. The two most popular package managers for installing Python packages are `pip` and `conda`.
 
 ## Package and Environment Managers
 
 ### pip
 
-pip stands for pip installs packages. It is a package manager for Python packages only. pip installs packages that are hosted on the Python Package Index or <a href="https://pypi.org">PyPI</a>. To see if a package you want is available run the following (with the anaconda3 module loaded):
+pip stands for "pip installs packages". It is a package manager for Python packages only. pip installs packages that are hosted on the Python Package Index or <a href="https://pypi.org">PyPI</a>. To see if a package you want is available run the following (after doing `$ module load anaconda3`):
 
 ```
 $ pip search <package>
@@ -136,7 +136,7 @@ If you see your package then do:
 $ pip install --user <package>
 ```
 
-The `--user` option is needed above so that the package is installed in your own user account where you have permission to write files. If you forget to include this option then the install will eventually fail with the following error:
+The `--user` option is needed above so that the package is installed in your account where you have permission to write files. If you forget to include this option then the install will eventually fail with the following error:
 
 ```
 Could not install packages due to an EnvironmentError: [Errno 30] Read-only file system
@@ -144,9 +144,11 @@ Could not install packages due to an EnvironmentError: [Errno 30] Read-only file
 
 pip will search for a pre-compiled version of the package you want called a wheel. If it fails to finds this for your platform then it will attempt to build the package from source. It can take pip several minutes to build a large package from source.
 
-Below is a primer which illustrates the most common uses of pip:
+One often needs to load various environment modules before doing a pip install. For instance, if your package uses GPUs then you will probably need to do `$ module load cudatoolkit` or if it uses the message-passing interface (MPI) for parallelization then `module load openmpi`. To see all available software modules, run `$ module avail`.
 
-Search PyPI for a given package:
+Below is a primer which illustrates the most common uses of pip.
+
+Search the Python Package Index ([PyPI](https://pypi.org/)) for a given package:
 ```
 $ pip search scitools
 ```
@@ -166,17 +168,17 @@ Install a set of packages listed in a text file
 $ pip install --user -r requirements.txt
 ```
 
-To see detailed information about an installed package
+To see detailed information about an installed package such as sphinx:
 ```
 $ pip show sphinx
 ```
 
-Upgrade the sphinx package
+Upgrade the sphinx package:
 ```
 $ pip install --user --upgrade sphinx
 ```
 
-Uninstall the pairtools package
+Uninstall the pairtools package:
 ```
 $ pip uninstall pairtools
 ```
