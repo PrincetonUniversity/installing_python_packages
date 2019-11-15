@@ -113,7 +113,7 @@ Let's confirm that by loading the Anaconda3 module that we get an updated versio
 ```
 $ python --version
 Python 3.7.4
-[jdh4@tigercpu ~]$ which python
+$ which python
 /usr/licensed/anaconda3/2019.10/bin/python
 ```
 
@@ -294,7 +294,6 @@ $ conda remove --name bigdata-env --all
 
 Much more can be done with conda as a <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html">package manager</a> or <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">environment manager</a>.
 
-
 ### pip vs. conda
 
 If your package exists on PyPI and Anaconda Cloud then how do you decide which to install from? The good news is that in most cases it doesn't matter. However, if you are on Windows then you should prefer conda since the packages are pre-built. For Linux if it is a simple package that doesn't do intensive computations then `pip` would be a good choice. If the package needs to be fast or if the dependencies are quite involved then favor `conda`. Because conda packages are pre-compiled, they cannot take full advantage of the vector instructions of our CPUs. However, many scientific conda packages are linked to the Intel MKL which leads to improved performance over pip installs. Conda packages may lag behind pip packages in terms of versioning.
@@ -406,9 +405,18 @@ Be sure to include `module load anaconda3 openmpi/gcc/3.1.3/64` in your Slurm sc
    
    Note that `--user` is omitted when using pip within a conda environment.
 
-8. How do I install a Python package in a custom location using pip?
+8. How do I install a Python package in a custom location using pip or conda?
 
-   There is a two step procedure for this. First do `pip install --target=</path/to/install/location> <package>` then update the PYTHONPATH environment variable with `export PYTHONPATH=$PYTHONPATH:/path/to/install/location`.
+   For pip, first do `pip install --target=</path/to/install/location> <package>` then update the PYTHONPATH environment variable in your `~/.bashrc` file with `export PYTHONPATH=$PYTHONPATH:/path/to/install/location`.
+
+   For conda, you use the `--prefix` option. For instance, to install cupy on `/scratch/gpfs/<NetID>`:
+
+    ```
+    $ module load anaconda3
+    $ conda create --prefix /scratch/gpfs/$USER/py-gpu cupy
+    ```
+
+   Be sure to have these two lines in your Slurm script: `module load anaconda3` and `conda activate /scratch/network/$USER/py-gpu`. Note that `/scratch/gpfs` is not backed up.
 
 9. I tried to install some packages but now none of my Python tools are working. Is it possible to delete all my Python packages and start over?
 
