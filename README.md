@@ -6,7 +6,7 @@ Throughout this guide we use angular brackets `< >` to denote command line optio
 
 ## Quick Start
 
-If you don't want to spend the time to read this entire page (not recommended) then try the following procedure to install your package (below we assume Python 3):
+If you don't want to spend the time to read this entire page (not recommended) then try the following procedure to install your package(s) (below we assume Python 3):
 
 ### pip
 
@@ -14,10 +14,10 @@ At the command line execute the following:
 
 ```
 $ module load anaconda3
-$ pip install --user <package>
+$ pip install --user <package-1> <package-2>
 ```
 
-The package and its dependencies will be installed in your home directory in `~/.local/lib/python<version>/site-packages`. Below is a sample Slurm script (job.slurm) that can be used to run your Python script (myscript.py):
+Each package and its dependencies will be installed in your home directory in `~/.local/lib/python<version>/site-packages`. Below is a sample Slurm script (job.slurm) that can be used to run your Python script (myscript.py):
 
 ```bash
 #!/bin/bash
@@ -42,11 +42,11 @@ If the above procedure failed then try the following:
 
 ```
 $ module load anaconda3
-$ conda create --name myenv <package>
+$ conda create --name myenv <package-1> <package-2>
 $ conda activate myenv
 ```
 
-The package will be installed locally in `~/.conda/pkgs`. On the command line, use `$ conda deactivate` to leave the active environment and return to the base environment. Below is a sample Slurm script:
+Each package and its dependencies will be installed locally in `~/.conda/pkgs`. On the command line, use `$ conda deactivate` to leave the active environment and return to the base environment. Below is a sample Slurm script:
 
 ```bash
 #!/bin/bash
@@ -364,7 +364,7 @@ $ module load cudatoolkit
 $ pip install --user cupy
 ```
 
-Be sure to include `anaconda3` in your Slurm script.
+Be sure to include `module load anaconda3` in your Slurm script.
 
 ### TensorFlow
 
