@@ -118,13 +118,13 @@ astroid                   2.3.1                    py37_0
 
 There are 291 packages pre-installed and ready to be used with a simple `import` statement. If the packages you need are on the list or are found in the Python standard library then you can begin your work. Otherwise, keep reading to learn how to install packages.
 
-Anaconda Python is a system library. This means that you can use all the packages but you can't make any modifications to them (such as an upgrade) and you can't install new ones in their location. You can however install whatever packages you want in your home directory. This allows you to utilize both the pre-installed Anaconda packages and the new ones that you install yourself. The two most popular package managers for installing Python packages are `pip` and `conda`.
+Anaconda Python is a system library. This means that you can use all the packages but you can't make any modifications to them (such as an upgrade) and you can't install new ones in their location. You can, however, install whatever packages you want in your home directory. This allows you to utilize both the pre-installed Anaconda packages and the new ones that you install yourself. The two most popular package managers for installing Python packages are `pip` and `conda`.
 
 ## Package and Environment Managers
 
 ### pip
 
-pip stands for "pip installs packages". It is a package manager for Python packages only. pip installs packages that are hosted on the Python Package Index or <a href="https://pypi.org">PyPI</a>. To see if a package you want is available run the following (after doing `$ module load anaconda3`):
+pip stands for "pip installs packages". It is a package manager for Python packages only. pip installs packages that are hosted on the Python Package Index or <a href="https://pypi.org">PyPI</a>. To see if a package you want is available, run the following (with `anaconda3` module loaded):
 
 ```
 $ pip search <package>
@@ -144,9 +144,9 @@ Could not install packages due to an EnvironmentError: [Errno 30] Read-only file
 
 pip will search for a pre-compiled version of the package you want called a wheel. If it fails to finds this for your platform then it will attempt to build the package from source. It can take pip several minutes to build a large package from source.
 
-One often needs to load various environment modules before doing a pip install. For instance, if your package uses GPUs then you will probably need to do `$ module load cudatoolkit` or if it uses the message-passing interface (MPI) for parallelization then `module load openmpi`. To see all available software modules, run `$ module avail`.
+One often needs to load various environment modules in addition to `anaconda3` before doing a pip install. For instance, if your package uses GPUs then you will probably need to do `$ module load cudatoolkit` or if it uses the message-passing interface (MPI) for parallelization then `module load openmpi`. To see all available software modules, run `$ module avail`.
 
-Below is a primer which illustrates the most common uses of pip.
+### Common pip commands
 
 Search the Python Package Index ([PyPI](https://pypi.org/)) for a given package:
 ```
@@ -189,14 +189,14 @@ For more on pip see <a href="https://pip.pypa.io/en/stable/user_guide/">here</a>
 
 Often times you will want to create isolated Python environments. This is useful, for instance, when you have two packages that require different versions of a third package. The use of environments saves one the trouble of repeatedly upgrading or downgrading the third package in this case.
 
-We recommend use `virtualenv` to create isolated Python environments. To get started with virtualenv it must first be installed as follows:
+We recommend using `virtualenv` to create isolated Python environments. To get started with `virtualenv` it must first be installed:
 
 ```
 $ module load anaconda3
 $ pip install --user virtualenv
 ```
 
-Note that like pip, virtualenv is an executable, not a library. To create an isolated environment do:
+Note that like pip, `virtualenv` is an executable, not a library. To create an isolated environment do:
 
 ```
 $ mkdir myenv
@@ -204,7 +204,7 @@ $ virtualenv myenv
 $ source </path/to>/myenv/bin/activate
 ```
 
-Now you can install Python packages in isolation from other environments:
+Consider replacing `myenv` with a more suitable name for your work. Now you can install Python packages in isolation from other Python environments:
 
 ```
 $ pip install slingshot bell
@@ -227,9 +227,9 @@ source </path/to>/myenv/bin/activate
 srun python myscript.py
 ```
 
-At the command line, to leave the environment do: `deactivate`
+At the command line, to leave the environment run `$ deactivate`
 
-As an alternative to `virtualenv`, you may also consider using the built-in Python 3 module `venv`. pip in combination with virtualenv serve as powerful package and environment managers. There are also combined managers such as `pipenv` and `pyenv` that you may consider.
+As an alternative to `virtualenv`, you may consider using the built-in Python 3 module `venv`. pip in combination with virtualenv serve as powerful package and environment managers. There are also combined managers such as `pipenv` and `pyenv` that you may consider.
 
 ### conda
 
