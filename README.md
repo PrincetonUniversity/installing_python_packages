@@ -330,7 +330,7 @@ $ conda create --name fenics-env -c conda-forge fenics
 $ conda activate fenics-env
 ```
 
-For better performance one may consider <a href="https://fenics.readthedocs.io/en/latest/installation.html#from-source">installing from source</a>.
+Make sure you include `source </path/to>/<your-fenics-env>/bin/activate` in your Slurm script. For better performance one may consider <a href="https://fenics.readthedocs.io/en/latest/installation.html#from-source">installing from source</a>.
 
 ### Common pip
 
@@ -342,7 +342,13 @@ $ source </path/to>/<your-fenics-env>/bin/activate
 $ pip install <package>
 ```
 
-Make sure you include `source </path/to>/<your-fenics-env>/bin/activate` in your Slurm script.
+### Install CuPy on Traverse:
+
+```
+$ module load anaconda3
+$ module load cudatoolkit
+$ pip install --user cupy
+```
 
 ### TensorFlow
 
