@@ -342,13 +342,17 @@ $ source </path/to>/<your-fenics-env>/bin/activate
 $ pip install <package>
 ```
 
-### Install CuPy on Traverse:
+### CuPy on Traverse:
+
+CuPy is available via Anaconda Cloud on all our clusters except Traverse. For the `ppc64le` architecture of Traverse, use this procedure:
 
 ```
 $ module load anaconda3
 $ module load cudatoolkit
 $ pip install --user cupy
 ```
+
+Be sure to include `anaconda3` in your Slurm script.
 
 ### TensorFlow
 
