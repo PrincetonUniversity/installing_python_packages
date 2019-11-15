@@ -13,8 +13,8 @@ If you don't want to spend the time to read this entire page (not recommended) t
 At the command line execute the following:
 
 ```
-module load anaconda3
-pip install --user <package>
+$ module load anaconda3
+$ pip install --user <package>
 ```
 
 The package and its dependencies will be installed in your home directory in `~/.local/lib/python<version>/site-packages`. Below is a sample Slurm script (job.slurm) that can be used to run your Python script (myscript.py):
@@ -41,9 +41,9 @@ If the installation failed and packages were downloaded then you should remove t
 If the above procedure failed then try the following:
 
 ```
-module load anaconda3
-conda create --name myenv <package>
-conda activate myenv
+$ module load anaconda3
+$ conda create --name myenv <package>
+$ conda activate myenv
 ```
 
 The package will be installed locally in `~/.conda/pkgs`. On the command line, use `conda deactivate` to leave the environment. Below is a sample Slurm script:
@@ -74,8 +74,8 @@ On the Princeton HPC clusters we offer the Anaconda Python distribution. In addi
 To see all the Anaconda packages that are available and their versions do:
 
 ```
-module load anaconda3
-conda list
+$ module load anaconda3
+$ conda list
 ```
 
 The start of the output is shown below:
@@ -108,13 +108,13 @@ Anaconda is a system library. This means you can use all the packages but you ca
 pip stands for pip installs packages. It is a package manager for Python packages only. pip installs packages that are hosted on the Python Package Index or <a href="https://pypi.org">PyPI</a>. To see if a package you want is available run the following (with the anaconda3 module loaded):
 
 ```
-pip search <package>
+$ pip search <package>
 ```
 
 If you see your package then do:
 
 ```
-pip install --user <package>
+$ pip install --user <package>
 ```
 
 The `--user` option is needed above so that the package is installed in your own user account where you have permission to write files. If you forget to include this option then the install will eventually fail with the following error:
@@ -129,37 +129,37 @@ Below is a primer which illustrates the most common uses of pip:
 
 Search PyPI for a given package:
 ```
-pip search scitools
+$ pip search scitools
 ```
 
 List all installed packages:
 ```
-pip list
+$ pip list
 ```
 
 Install pairtools and pyblast for version 3.5 of Python
 ```
-pip install --user python==3.5 pairtools pyblast
+$ pip install --user python==3.5 pairtools pyblast
 ```
 
 Install a set of packages listed in a text file
 ```
-pip install --user -r requirements.txt
+$ pip install --user -r requirements.txt
 ```
 
 To see detailed information about an installed package
 ```
-pip show sphinx
+$ pip show sphinx
 ```
 
 Upgrade the sphinx package
 ```
-pip install --user --upgrade sphinx
+$ pip install --user --upgrade sphinx
 ```
 
 Uninstall the pairtools package
 ```
-pip uninstall pairtools
+$ pip uninstall pairtools
 ```
 
 For more on pip see <a href="https://pip.pypa.io/en/stable/user_guide/">here</a>.
@@ -171,22 +171,22 @@ Often times you will want to create isolated Python environments. This is useful
 We recommend use `virtualenv` to create isolated Python environments. To get started with virtualenv it must first be installed as follows:
 
 ```
-module load anaconda3
-pip install --user virtualenv
+$ module load anaconda3
+$ pip install --user virtualenv
 ```
 
 Note that like pip, virtualenv is an executable, not a library. To create an isolated environment do:
 
 ```
-mkdir myenv
-virtualenv myenv
-source </path/to>/myenv/bin/activate
+$ mkdir myenv
+$ virtualenv myenv
+$ source </path/to>/myenv/bin/activate
 ```
 
 Now you can install Python packages in isolation from other environments:
 
 ```
-pip install slingshot bell
+$ pip install slingshot bell
 ```
 
 Note the `--user` option is omitted since the packages will be installed locally in the virtual environment. Make sure you source the environment in your Slurm script as in this example:
@@ -219,9 +219,9 @@ Conda looks to <a href="https://anaconda.org">Anaconda Cloud</a> to handle insta
 Conda always installs pre-built binary files. The software it provides often has performance advantages over other managers due to leveraging Intel MKL, for instance. Below is a typical session where an environment is created and a package is installed in to it:
 
 ```
-module load anaconda3
-conda create --name myenv <package>
-conda activate myenv
+$ module load anaconda3
+$ conda create --name myenv <package>
+$ conda activate myenv
 ```
 
 To leave a conda environment use `conda deactivate`.
@@ -231,38 +231,45 @@ If you try to install using `conda install <package>` it will fail with `Environ
 Below is a primer which illustrates the most common uses of conda:
 
 Search Anaconda Cloud for the fenics package:
+
 ```
-conda search fenics
+$ conda search fenics
 ```
 
 List all the installed packages for the present environment:
+
 ```
-conda list
+$ conda list
 ```
 
 Create the myenv environment and install pairtools into the that environment:
+
 ```
-conda create --name myenv pairtools
+$ conda create --name myenv pairtools
 ```
 
 Create an environment called myenv and install a Python version 3.6 of beaver in it:
+
 ```
-conda create --name myenv python=3.6 beaver
+$ conda create --name myenv python=3.6 beaver
 ```
 
 Create an environment called biowork-env and install blast from the bioconda channel:
+
 ```
-conda create --name biowork-env --channel bioconda blast
+$ conda create --name biowork-env --channel bioconda blast
 ```
 
 List the available environments:
+
 ```
-conda list --envs
+$ conda list --envs
 ```
 
 Remove the bigdata-env environment
+
 ```
-conda remove --name bigdata-env --all
+$ conda remove --name bigdata-env --all
 ```
 
 Much more can be done with conda as a <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-pkgs.html">package manager</a> or <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">environment manager</a>.
@@ -278,7 +285,7 @@ If your package exists on PyPI and Anaconda Cloud then how do you decide which t
 In some cases you will be provided with the source code for your package. To install from source do:
 
 ```
-python setup.py install --prefix=</path/to/install/location>
+$ python setup.py install --prefix=</path/to/install/location>
 ```
 
 Be sure to update the appropriate environment variables:
@@ -299,9 +306,9 @@ Both <a href="https://packaging.python.org/tutorials/packaging-projects/">PyPI</
 <a href="https://fenicsproject.org">FEniCS</a> is an open-source computing platform for solving partial differential equations. To install:
 
 ```
-module load anaconda3
-conda create --name fenics-env -c conda-forge fenics
-conda activate fenics-env
+$ module load anaconda3
+$ conda create --name fenics-env -c conda-forge fenics
+$ conda activate fenics-env
 ```
 
 For better performance one may consider <a href="https://fenics.readthedocs.io/en/latest/installation.html#from-source">installing from source</a>.
@@ -309,11 +316,11 @@ For better performance one may consider <a href="https://fenics.readthedocs.io/e
 ### Common pip
 
 ```
-module load anaconda3
-mkdir <your-fenics-env>
-virtualenv <your-fenics-env>
-source </path/to>/<your-fenics-env>/bin/activate
-pip install <package>
+$ module load anaconda3
+$ mkdir <your-fenics-env>
+$ virtualenv <your-fenics-env>
+$ source </path/to>/<your-fenics-env>/bin/activate
+$ pip install <package>
 ```
 
 Make sure you include `source </path/to>/<your-fenics-env>/bin/activate` in your Slurm script.
@@ -331,15 +338,15 @@ See <a href="https://github.com/PrincetonUniversity/install_pytorch">this page</
 MPI for Python (mpi4py) provides bindings of the Message Passing Interface (MPI) standard for the Python programming language. It can be used to parallelize Python scripts. To install:
 
 ```
-module load anaconda3
-conda create --name fast-mpi4py python=3.7
-conda activate fast-mpi4py
-module load intel-mpi intel
-export MPICC=`which mpicc`
-pip install mpi4py
+$ module load anaconda3
+$ conda create --name fast-mpi4py python=3.7
+$ conda activate fast-mpi4py
+$ module load rh/devtoolset/7 openmpi/gcc/3.1.3/64
+$ export MPICC=`which mpicc`
+$ pip install mpi4py
 ```
 
-Be sure to include `module load anaconda3 intel-mpi intel` in your Slurm script. A complete guide on installing mpi4py on the HPC clusters is <a href="https://oncomputingwell.princeton.edu/2018/11/installing-and-running-mpi4py-on-the-cluster">here</a>.
+Be sure to include `module load anaconda3 openmpi/gcc/3.1.3/64` in your Slurm script. A complete guide on installing mpi4py on the HPC clusters is <a href="https://oncomputingwell.princeton.edu/2018/11/installing-and-running-mpi4py-on-the-cluster">here</a>.
 
 
 ## FAQ
@@ -372,9 +379,9 @@ Be sure to include `module load anaconda3 intel-mpi intel` in your Slurm script.
 
    Yes, and this tends to work well. A typical session may look like this:
    ```
-   module load anaconda3
-   conda create --name myenv python=3.6
-   pip install scitools
+   $ module load anaconda3
+   $ conda create --name myenv python=3.6
+   $ pip install scitools
    ```
    
    Note that `--user` is omitted when using pip within a conda environment.
