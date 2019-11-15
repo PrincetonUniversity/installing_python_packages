@@ -430,10 +430,10 @@ Be sure to include `module load anaconda3 openmpi/gcc/3.1.3/64` in your Slurm sc
 
     Intel provides their own implementation of Python as well as numerous package optimized for Intel hardware. You may find significant performance benefits. The Intel Python interpreter does not use GNU readline so most find it awkward to use. To create a conda environment with Intel Python and some numerics packages:
    
-   ```
-   $ module load anaconda3
-   $ conda create --name my-intel --channel intel python numpy scipy 
-   ```
+    ```
+    $ module load anaconda3
+    $ conda create --name my-intel --channel intel python numpy scipy 
+    ```
 
 ## <a name="getting_help">Getting Help<a>
 
