@@ -428,7 +428,7 @@ Be sure to include `module load anaconda3 openmpi/gcc/3.1.3/64` in your Slurm sc
 
 11. What is the Intel Python distribution and how do I get started with it?
 
-   Intel provides their own implementation of Python as well as numerous package optimized for Intel hardware. You may find significant performance benefits. The Intel Python interpreter does not use GNU readline so most find it awkward to use. To create a conda environment with Intel Python and some numerics packages:
+    Intel provides their own implementation of Python as well as numerous package optimized for Intel hardware. You may find significant performance benefits. The Intel Python interpreter does not use GNU readline so most find it awkward to use. To create a conda environment with Intel Python and some numerics packages:
    
    ```
    $ module load anaconda3
