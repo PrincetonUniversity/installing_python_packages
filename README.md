@@ -150,6 +150,11 @@ One often needs to load various environment modules in addition to `anaconda3` b
 
 ### Common pip commands
 
+View the help menu:
+```
+$ pip -h
+```
+
 Search the Python Package Index ([PyPI](https://pypi.org/)) for a given package:
 ```
 $ pip search scitools
@@ -252,6 +257,11 @@ To leave a conda environment: `$ conda deactivate`.
 If you try to install using `conda install <package>` it will fail with `EnvironmentNotWritableError: The current user does not have write permissions to the target environment`. The solution is to create an environment and do the install in the same command (as shown above).
 
 ### Common conda commands
+
+View the help menu:
+```
+$ conda -h
+```
 
 Search the `conda-forge` channel for the fenics package:
 
