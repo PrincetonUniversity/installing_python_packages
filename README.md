@@ -63,7 +63,7 @@ conda activate myenv
 srun python myscript.py
 ```
 
-If both procedures failed then continue reading or see the [Getting Help](#getting_help) section at the bottom of this page.
+If the installation failed and packages were downloaded then you should remove those packages before proceeding (see contents of `~/.conda/pkgs`). If both the pip and conda procedures failed then continue reading or see the [Getting Help](#getting_help) section at the bottom of this page.
 
 If for some reason you are trying to install a Python 2 package then use `module load anaconda` instead of `anaconda3` in the directions above. Note that Python 2 will be unsupported beginning on January 1, 2020.
 
