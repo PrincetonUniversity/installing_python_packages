@@ -252,9 +252,9 @@ $ conda create --name myenv <package-1> <package-2>
 $ conda activate myenv
 ```
 
-Note that you should specify all the packages that you need in one line so that the dependencies can satisfied simultaneously. Installing packages at a later time is possible but should be avoided if possible.
+Note that you should specify all the packages that you need in one line so that the dependencies can be satisfied simultaneously. Installing packages at a later time is possible but should be avoided.
 
-To leave a conda environment: `$ conda deactivate`.
+To exit a conda environment, run this command: `$ conda deactivate`.
 
 If you try to install using `conda install <package>` it will fail with `EnvironmentNotWritableError: The current user does not have write permissions to the target environment`. The solution is to create an environment and do the install in the same command (as shown above).
 
@@ -367,6 +367,12 @@ $ pip install --user cupy
 ```
 
 Be sure to include `module load anaconda3` in your Slurm script.
+
+### PyStan
+
+If you get an error like "CompileError: command 'gcc' failed with exit status 1" then try again after loading the rh module:
+`$ module load rh/devtoolset/7`. The rh module provides a newer compiler suite.
+
 
 ### TensorFlow
 
