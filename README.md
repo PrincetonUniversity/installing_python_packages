@@ -321,6 +321,8 @@ In some cases you will be provided with the source code for your package. To ins
 $ python setup.py install --prefix=</path/to/install/location>
 ```
 
+For help menu use `python setup.py --help-commands`.
+
 Be sure to update the appropriate environment variables in your `~/.bashrc` file:
 
 ```
