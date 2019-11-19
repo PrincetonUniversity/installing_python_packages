@@ -386,14 +386,17 @@ See <a href="https://github.com/PrincetonUniversity/install_pytorch">this page</
 
 ### PyTorch Scatter
 
+First install PyTorch following the directions above:
+
 ```
+$ ssh <NetID>@tigergpu.princeton.edu
 $ module load anaconda3
 $ conda create --name torch-env pytorch torchvision cudatoolkit=10.1 --channel pytorch
 $ conda activate torch-env
 $ pip install pytest-runner
 ```
 
-The build system requires that GPUs be on the machine so create an interactive allocation on a GPU node. Compute nodes do not have internet access so download the source code first:
+The build system for PyTorch Scatter requires that GPUs be on the machine so create an interactive allocation on a GPU node. Compute nodes do not have internet access so download the source code first:
 
 ```
 $ wget https://github.com/rusty1s/pytorch_scatter/archive/1.4.0.tar.gz
