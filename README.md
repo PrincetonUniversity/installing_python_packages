@@ -14,7 +14,7 @@ At the command line execute the following:
 
 ```
 $ module load anaconda3
-$ pip install --user <package-1> <package-2>
+$ pip install --user <package-1> <package-2> ... <package-N>
 ```
 
 Each package and its dependencies will be installed in your home directory in `~/.local/lib/python<version>/site-packages`. Below is a sample Slurm script (job.slurm) that can be used to run your Python script (myscript.py):
@@ -42,7 +42,7 @@ If the above procedure failed then try the following:
 
 ```
 $ module load anaconda3
-$ conda create --name myenv <package-1> <package-2>
+$ conda create --name myenv <package-1> <package-2> ... <package-N>
 $ conda activate myenv
 ```
 
