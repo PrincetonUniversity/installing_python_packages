@@ -271,6 +271,12 @@ View the help menu:
 $ conda -h
 ```
 
+To view the help menu for the install command:
+
+```
+conda install --help
+```
+
 Search the `conda-forge` channel for the fenics package:
 
 ```
