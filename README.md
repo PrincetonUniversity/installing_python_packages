@@ -155,6 +155,12 @@ View the help menu:
 $ pip -h
 ```
 
+The help menu for the install command:
+
+```
+$ pip install --help
+```
+
 Search the Python Package Index ([PyPI](https://pypi.org/)) for a given package:
 ```
 $ pip search scitools
