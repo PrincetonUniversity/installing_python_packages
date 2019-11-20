@@ -223,7 +223,7 @@ Consider replacing `myenv` with a more suitable name for your work. Now you can 
 $ pip install slingshot bell
 ```
 
-Note the `--user` option is omitted since the packages will be installed locally in the virtual environment. Make sure you source the environment in your Slurm script as in this example:
+Note the `--user` option is omitted since the packages will be installed locally in the virtual environment. Make sure you `source` the environment in your Slurm script as in this example:
 
 ```
 #!/bin/bash
