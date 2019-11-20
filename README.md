@@ -161,9 +161,9 @@ The help menu for the install command:
 $ pip install --help
 ```
 
-Search the Python Package Index ([PyPI](https://pypi.org/)) for a given package:
+Search the Python Package Index ([PyPI](https://pypi.org/)) for a given package (e.g., jax):
 ```
-$ pip search scitools
+$ pip search jax
 ```
 
 List all installed packages:
