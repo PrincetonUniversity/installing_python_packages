@@ -487,7 +487,7 @@ Be sure to include `module load anaconda3 openmpi/gcc/3.1.3/64` in your Slurm sc
 
 9. I tried to install some packages but now none of my Python tools are working. Is it possible to delete all my Python packages and start over?
 
-   Yes. Packages installed by pip are in `.local/lib` while conda packages and environments are in `.conda`. If you made any environments with virtualenv you should remove those as well. Removing these directories will give you a clean start. Be sure to examine the contents first. It may be wise to selectively remove sub-directories instead.
+   Yes. Packages installed by pip are in `~/.local/lib` while conda packages and environments are in `~/.conda`. If you made any environments with virtualenv you should remove those as well. Removing these directories will give you a clean start. Be sure to examine the contents first. It may be wise to selectively remove sub-directories instead. You may also need remove the `~/.cache` directory and you may need to make modifications to your `.bashrc` file if you added or changed environment variables.
    
 10. How are my pip packages built? Which optimization flags are used? Do I have to be careful with vectorization on Della where several different CPUs are in play?
 
