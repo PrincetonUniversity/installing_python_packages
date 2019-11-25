@@ -396,9 +396,9 @@ See <a href="https://github.com/PrincetonUniversity/slurm_mnist">this page</a> t
 
 See <a href="https://github.com/PrincetonUniversity/install_pytorch">this page</a> to install PyTorch on the HPC clusters.
 
-### PyTorch Scatter
+### PyTorch-Cluster
 
-First install PyTorch following the directions above:
+Here are directions TigerGPU:
 
 ```
 $ ssh <NetID>@tigergpu.princeton.edu
