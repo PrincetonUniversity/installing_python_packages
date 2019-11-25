@@ -254,7 +254,7 @@ Conda always installs pre-built binary files. The software it provides often has
 
 ```
 $ module load anaconda3
-$ conda create --name myenv <package-1> <package-2>
+$ conda create --name myenv <package-1> <package-2> ... <package-N>
 $ conda activate myenv
 ```
 
@@ -402,20 +402,19 @@ First install PyTorch following the directions above:
 
 ```
 $ ssh <NetID>@tigergpu.princeton.edu
-$ module load anaconda3
-$ conda create --name torch-env pytorch torchvision cudatoolkit=10.1 --channel pytorch
-$ conda activate torch-env
-$ pip install pytest-runner
+$ module load anaconda3/2019.10
+$ conda create --name torch-env pytorch torchvision cudatoolkit=10.1 scipy pytest-runner pytest-cov --channel pytorch
+$ git clone https://github.com/rusty1s/pytorch_cluster.git
 ```
 
-The build system for PyTorch Scatter requires that GPUs be on the machine so create an interactive allocation on a GPU node. Compute nodes do not have internet access so download the source code first:
+The build system for PyTorch Scatter requires that GPUs be on the machine so create an interactive allocation on a GPU node (compute nodes do not have internet access so we downloaded the source code first):
 
 ```
-$ wget https://github.com/rusty1s/pytorch_scatter/archive/1.4.0.tar.gz
 $ salloc -N 1 -n 1 -t 5 --gres=gpu:1
-$ module load anaconda3 cudatoolkit/10.1
+$ module load anaconda3/2019.10 cudatoolkit/10.1 rh/devtoolset/8
 $ conda activate torch-env
-$ pip install 1.4.0.tar.gz
+$ cd pytorch_cluster
+$ python setup.py install test
 $ exit
 ```
 
