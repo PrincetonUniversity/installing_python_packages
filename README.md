@@ -396,7 +396,7 @@ See <a href="https://github.com/PrincetonUniversity/slurm_mnist">this page</a> t
 
 See <a href="https://github.com/PrincetonUniversity/install_pytorch">this page</a> to install PyTorch on the HPC clusters.
 
-### PyTorch-Cluster
+### PyTorch Cluster
 
 Here are directions TigerGPU:
 
@@ -407,7 +407,7 @@ $ conda create --name torch-env pytorch torchvision cudatoolkit=10.1 scipy pytes
 $ git clone https://github.com/rusty1s/pytorch_cluster.git
 ```
 
-The build system for PyTorch Scatter requires that GPUs be on the machine so create an interactive allocation on a GPU node (compute nodes do not have internet access so we downloaded the source code first):
+The build procedure for [PyTorch Cluster](https://github.com/rusty1s/pytorch_cluster) requires that GPUs be on the machine so create an interactive allocation on a GPU node (compute nodes do not have internet access so we downloaded the source code first using `git clone`):
 
 ```
 $ salloc -N 1 -n 1 -t 5 --gres=gpu:1
