@@ -17,7 +17,7 @@ $ module load anaconda3
 $ pip install --user <package-1> <package-2> ... <package-N>
 ```
 
-Each package and its dependencies will be installed in your home directory in `~/.local/lib/python<version>/site-packages`. Below is a sample Slurm script (job.slurm) that can be used to run your Python script (myscript.py):
+Each package and its dependencies will be installed in your home directory in `~/.local/lib/python<version>/site-packages`. Do not use the `pip3` command even if the directions you are following tell you to do so (use `pip` instead). Below is a sample Slurm script (job.slurm) that can be used to run your Python script (myscript.py):
 
 ```bash
 #!/bin/bash
