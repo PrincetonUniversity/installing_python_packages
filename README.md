@@ -362,16 +362,6 @@ $ conda activate fenics-env
 
 Make sure you include `source </path/to>/<your-fenics-env>/bin/activate` in your Slurm script. For better performance one may consider <a href="https://fenics.readthedocs.io/en/latest/installation.html#from-source">installing from source</a>.
 
-### Common pip
-
-```
-$ module load anaconda3
-$ mkdir <your-fenics-env>
-$ virtualenv <your-fenics-env>
-$ source </path/to>/<your-fenics-env>/bin/activate
-$ pip install <package>
-```
-
 ### CuPy on Traverse:
 
 CuPy is available via Anaconda Cloud on all our clusters except Traverse. For the `ppc64le` architecture of Traverse, use this procedure:
