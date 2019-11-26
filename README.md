@@ -494,7 +494,7 @@ Be sure to include `module load anaconda3 openmpi/gcc/3.1.3/64` in your Slurm sc
     ```
 12. The installation directions that I am following say to use `pip3`. Is this okay?
 
-    Do not use `pip3` for installing Python packages. `pip3` is a component of the system Python and it will not work properly with Anaconda. Always use `pip` for installing packages.
+    Do not use `pip3` for installing Python packages. `pip3` is a component of the system Python and it will not work properly with Anaconda. Always do `module load anaconda3` and then use `pip` for installing packages.
 
 
 ## <a name="getting_help">Getting Help<a>
