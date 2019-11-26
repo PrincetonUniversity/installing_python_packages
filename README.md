@@ -144,6 +144,8 @@ The `--user` option is needed above so that the package is installed in your acc
 Could not install packages due to an EnvironmentError: [Errno 30] Read-only file system
 ```
 
+Do not use the `pip3` command even if the directions you are following tell you to do so (use `pip` instead).
+
 pip will search for a pre-compiled version of the package you want called a wheel. If it fails to finds this for your platform then it will attempt to build the package from source. It can take pip several minutes to build a large package from source.
 
 One often needs to load various environment modules in addition to `anaconda3` before doing a pip install. For instance, if your package uses GPUs then you will probably need to do `$ module load cudatoolkit` or if it uses the message-passing interface (MPI) for parallelization then `$ module load openmpi`. To see all available software modules, run `$ module avail`.
@@ -500,6 +502,10 @@ Be sure to include `module load anaconda3 openmpi/gcc/3.1.3/64` in your Slurm sc
     $ module load anaconda3
     $ conda create --name my-intel --channel intel python numpy scipy
     ```
+12. The installation directions that I am following say to use `pip3`. Is this okay?
+
+    Do not use `pip3` for installing Python packages. `pip3` is a component of the system Python and it will not work properly with Anaconda. Always use `pip` for installing packages.
+
 
 ## <a name="getting_help">Getting Help<a>
 
