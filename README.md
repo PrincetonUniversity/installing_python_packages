@@ -390,7 +390,7 @@ See <a href="https://github.com/PrincetonUniversity/install_pytorch">this page</
 
 ### PyTorch Cluster
 
-Here are directions TigerGPU:
+Here are directions for TigerGPU:
 
 ```
 $ ssh <NetID>@tigergpu.princeton.edu
