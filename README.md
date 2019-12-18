@@ -362,7 +362,7 @@ $ mkdir myjob && cd myjob
 $ sbatch job.slurm
 ```
 
-If the run produces data that you want to back-up then copy or move it to `/tigress`:
+If the run produces data that you want to backup then copy or move it to `/tigress`:
 
 ```
 $ cp -r /scratch/gpfs/<NetID>/myjob /tigress/<NetID>
