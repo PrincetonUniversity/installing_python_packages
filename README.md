@@ -352,7 +352,7 @@ Both <a href="https://packaging.python.org/tutorials/packaging-projects/">PyPI</
 
 You should run your jobs out of `/scratch/gpfs/<NetID>` on the HPC clusters. These filesystems are very fast and provide vast amounts of storage. Do not run jobs out of `/tigress`. That is, you should never be writing the output of actively running jobs to `/tigress`. The `/tigress` filesystem is slow and it should only be used for backing up the files that you produce on `/scratch/gpfs`. Your `/home` directory on all clusters is small and it should only be used for storing source code and executables.
 
-The commands below give you an idea of how to launch your first R job:
+The commands below give you an idea of how to launch your first Python job:
 
 ```
 $ ssh <NetID>@della.princeton.edu
