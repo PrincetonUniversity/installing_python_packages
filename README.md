@@ -348,6 +348,32 @@ export PYTHONPATH=</path/to/install/location>/lib/python<version>/site-packages:
 
 Both <a href="https://packaging.python.org/tutorials/packaging-projects/">PyPI</a> and Anaconda allow registered users to store their packages on their platforms. You must follow the instructions for doing so but once done someone can do a pip install or a conda install of your package. This makes it very easy to enable someone else to use your research software.
 
+## Where to Store Your Files
+
+You should run your jobs out of `/scratch/gpfs/<NetID>` on the HPC clusters. These filesystems are very fast and provide vast amounts of storage. Do not run jobs out of `/tigress`. That is, you should never be writing the output of actively running jobs to `/tigress`. The `/tigress` filesystem is slow and it should only be used for backing up the files that you produce on `/scratch/gpfs`. Your `/home` directory on all clusters is small and it should only be used for storing source code and executables.
+
+The commands below give you an idea of how to launch your first R job:
+
+```
+$ ssh <NetID>@della.princeton.edu
+$ cd /scratch/gpfs/<NetID>
+$ mkdir myjob && cd myjob
+# put Slurm script and Python script in myjob
+$ sbatch job.slurm
+```
+
+If the run produces data that you want to back-up then copy or move it to `/tigress`:
+
+```
+$ cp -r /scratch/gpfs/<NetID>/myjob /tigress/<NetID>
+```
+
+For large transfers consider using `rsync` instead of `cp`. Most users only do back-ups to `/tigress` every week or so. While `/scratch/gpfs` is not backed-up, files are never removed. However, important results should be transferred to `/tigress`.
+
+The diagram below gives an overview of the filesystems:
+
+![tigress](https://tigress-web.princeton.edu/~jdh4/hpc_princeton_filesystems.png)
+
 ## Common Examples
 
 ### FEniCS
