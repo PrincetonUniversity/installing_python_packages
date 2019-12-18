@@ -25,11 +25,15 @@ Each package and its dependencies will be installed in your home directory in `~
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G is default)
+#SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G per cpu-core is default)
 #SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
+#SBATCH --mail-type=all          # send email when job begins, ends and fails
+#SBATCH --mail-user=<YourNetID>@princeton.edu
 
+module purge
 module load anaconda3
-srun python myscript.py
+
+python myscript.py
 ```
 
 The job is submitted to the cluster with: `$ sbatch job.slurm`. Note that the `anaconda3` module is loaded in the Slurm script.
@@ -54,13 +58,16 @@ Each package and its dependencies will be installed locally in `~/.conda/pkgs`. 
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G is default)
+#SBATCH --mem-per-cpu=4G         # memory per cpu-core (4G per cpu-core is default)
 #SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
+#SBATCH --mail-type=all          # send email when job begins, ends and fails
+#SBATCH --mail-user=<YourNetID>@princeton.edu
 
+module purge
 module load anaconda3
 conda activate myenv
 
-srun python myscript.py
+python myscript.py
 ```
 
 If the installation failed and packages were downloaded then you should remove those packages before proceeding (see contents of `~/.conda/pkgs`). If both the pip and conda procedures failed then continue reading or see the [Getting Help](#getting_help) section at the bottom of this page.
