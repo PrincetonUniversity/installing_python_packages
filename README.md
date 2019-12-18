@@ -358,7 +358,7 @@ The commands below give you an idea of how to launch your first Python job:
 $ ssh <NetID>@della.princeton.edu
 $ cd /scratch/gpfs/<NetID>
 $ mkdir myjob && cd myjob
-# put Slurm script and Python script in myjob
+# put Python script and Slurm script in myjob
 $ sbatch job.slurm
 ```
 
