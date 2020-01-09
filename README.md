@@ -110,9 +110,17 @@ Python 3.7.4
 
 $ which python
 /usr/licensed/anaconda3/2019.10/bin/python
+
+$ python3 --version
+Python 3.7.4
+
+$ which python3
+/usr/licensed/anaconda3/2019.10/bin/python3
 ```
 
-We now have an updated version of Python and related tools. To see all the pre-installed Anaconda packages and their versions use the `conda list` command:
+We now have an updated version of Python and related tools. In fact, the new `python` and `python3` commands are identical as they are in fact symbolic links that point to `python3.7`.
+
+To see all the pre-installed Anaconda packages and their versions use the `conda list` command:
 
 ```
 $ conda list
