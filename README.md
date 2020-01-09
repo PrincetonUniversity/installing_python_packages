@@ -84,6 +84,12 @@ Python 2.7.5
 
 $ which python
 /usr/bin/python
+
+$ python3 --version
+Python 3.6.8
+
+$ which python3
+/usr/bin/python3
 ```
 
 We see that it is an old version and it is installed in a standard system directory.
