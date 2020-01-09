@@ -92,7 +92,7 @@ $ which python3
 /usr/bin/python3
 ```
 
-We see that it is an old version and it is installed in a standard system directory.
+We see that `python` corresponds to version 2 and both are installed in a standard system directory.
 
 On the Princeton HPC clusters we offer the Anaconda Python distribution. In addition to Python's vast built-in <a href="https://docs.python.org/3/library/">library</a>, Anaconda provides hundreds of additional packages which are ideal for scientific computing. In fact, many of these packages are optimized for our hardware.
 
