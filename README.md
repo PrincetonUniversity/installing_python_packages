@@ -397,7 +397,13 @@ The diagram below gives an overview of the filesystems:
 
 ![tigress](https://tigress-web.princeton.edu/~jdh4/hpc_princeton_filesystems.png)
 
-## Common Examples
+## Running Jupyter Notebooks on the HPC Clusters
+
+Please see [this post](https://oncomputingwell.princeton.edu/2018/05/jupyter-on-the-cluster/#more-159) on On Computing Well.
+
+![jupyter](https://tigress-web.princeton.edu/~jdh4/jupyter_notebook.png)
+
+## Common Package Installation Examples
 
 ### FEniCS
 
