@@ -407,7 +407,7 @@ You will need to choose the "Number of hours", "Number of cores" and "Memory all
 
 ![jupyter](https://tigress-web.princeton.edu/~jdh4/jupyter_notebook.png)
 
-If you need more control over the session or if you need to use a GPU then see [this post](https://oncomputingwell.princeton.edu/2018/05/jupyter-on-the-cluster/#more-159) on On Computing Well.
+If you need more control over the session or if you need to use a GPU then see [this post](https://oncomputingwell.princeton.edu/2018/05/jupyter-on-the-cluster/#more-159).
 
 ## Common Package Installation Examples
 
