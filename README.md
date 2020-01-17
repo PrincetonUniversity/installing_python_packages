@@ -407,7 +407,7 @@ To begin a session, click on "Interactive Apps" and then "Jupyter". You will nee
 
 ![jupyter](https://tigress-web.princeton.edu/~jdh4/jupyter_notebook.png)
 
-If you need more control over the session or if you need to use a GPU then see [this post](https://oncomputingwell.princeton.edu/2018/05/jupyter-on-the-cluster/#more-159).
+If you need more control over the session or if you need to use a GPU then see [this post](https://oncomputingwell.princeton.edu/2018/05/jupyter-on-the-cluster).
 
 ## Common Package Installation Examples
 
