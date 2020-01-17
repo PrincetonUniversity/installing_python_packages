@@ -397,15 +397,17 @@ The diagram below gives an overview of the filesystems:
 
 ![tigress](https://tigress-web.princeton.edu/~jdh4/hpc_princeton_filesystems.png)
 
-There is also special hardware on each node called an NVMe card. This allows for much faster reads and writes in comparison to `/scratch/gpfs/<NetID>`. To take advantage of these storage devices, carry out your I/O on `/scratch`. Be sure to transfer your data to `/scratch/gpfs/<NetID>`. This can be done by adding a line like the following to the bottom of your Slurm script: `cp /scratch/*.outfiles /scratch/gpfs/<NetID>/<JobDir>`.
+There is also special hardware on each node called an NVMe card. These cards allow for much faster reads and writes in comparison to `/scratch/gpfs/<NetID>`. To take advantage of these storage devices, carry out your I/O on `/scratch`. Be sure to transfer your data to `/scratch/gpfs/<NetID>` before the job ends. This can be done by adding a line like the following to the bottom of your Slurm script: `cp /scratch/*.outfiles /scratch/gpfs/<NetID>/<JobDir>`. A great use of the NVMe's would be training a deep convolutional neural network. One should see a performance boost by first copying the images to `/scratch` at the start of the job and then doing the training by drawing batches from those files. In this case the images should be deleted before the job ends.
 
 ## Running Jupyter Notebooks on the HPC Clusters
 
 Jupyter is available through two web portals. If you have an account on Adroit or Della then browse to [https://myadroit.princeton.edu](https://myadroit.princeton.edu) or [https://mydella.princeton.edu](https://mydella.princeton.edu). To begin a session, click on "Interactive Apps" and then "Jupyter".
 
-Please see [this post](https://oncomputingwell.princeton.edu/2018/05/jupyter-on-the-cluster/#more-159) on On Computing Well.
+You will need to choose the "Number of hours", "Number of cores" and "Memory allocated". Set "Number of cores" to 1 unless you are sure that your script has been explicitly parallelized. Click "Launch" and then when your session is ready click "Connect to Jupyter". Note that the more resources you request, the more you will have to wait for your session to become available. Then click on "New" in the upper right and choose "Python 3.7" from the drop-down menu.
 
 ![jupyter](https://tigress-web.princeton.edu/~jdh4/jupyter_notebook.png)
+
+If you need more control over the session or if you need to use a GPU then see [this post](https://oncomputingwell.princeton.edu/2018/05/jupyter-on-the-cluster/#more-159) on On Computing Well.
 
 ## Common Package Installation Examples
 
