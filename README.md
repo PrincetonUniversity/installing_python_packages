@@ -397,7 +397,11 @@ The diagram below gives an overview of the filesystems:
 
 ![tigress](https://tigress-web.princeton.edu/~jdh4/hpc_princeton_filesystems.png)
 
+There is also special hardware on each node called an NVMe card. This allows for much faster reads and writes in comparison to `/scratch/gpfs/<NetID>`. To take advantage of these storage devices, carry out your I/O on `/scratch`. Be sure to transfer your data to `/scratch/gpfs/<NetID>`. This can be done by adding a line like the following to the bottom of your Slurm script: `cp /scratch/*.outfiles /scratch/gpfs/<NetID>/<JobDir>`.
+
 ## Running Jupyter Notebooks on the HPC Clusters
+
+Jupyter is available through two web portals. If you have an account on Adroit or Della then browse to [https://myadroit.princeton.edu](https://myadroit.princeton.edu) or [https://mydella.princeton.edu](https://mydella.princeton.edu). To begin a session, click on "Interactive Apps" and then "Jupyter".
 
 Please see [this post](https://oncomputingwell.princeton.edu/2018/05/jupyter-on-the-cluster/#more-159) on On Computing Well.
 
