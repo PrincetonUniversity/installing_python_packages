@@ -495,7 +495,7 @@ Be sure to include `module load anaconda3 openmpi/gcc/3.1.3/64` in your Slurm sc
 
 2. What should I do if I try to install a Python package and the install fails with: `error: Disk quota exceeded`?
 
-   You have three options. First, consider removing files within your home directory to make space available. Second, run the `checkquota` command and follow the link at the bottom to request more space. Lastly, for pip installations see the question toward the bottom of this FAQ for a third possibility i.e., setting `--location to /scratch/gpfs/<username>`.
+   You have three options. First, consider removing files within your home directory to make space available. Second, run the `checkquota` command and follow the link at the bottom to request more space. Lastly, for pip installations see the question toward the bottom of this FAQ for a third possibility i.e., setting `--location to /scratch/gpfs/<username>`. For conda installs try learning about the `--prefix` option.
 
 3. Why do I get the following error message when I try to run pip on Della: `-bash: pip: command not found`?
 
