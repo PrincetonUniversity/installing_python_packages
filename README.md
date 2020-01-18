@@ -17,7 +17,7 @@ $ module load anaconda3
 $ pip install --user <package-1> <package-2> ... <package-N>
 ```
 
-Each package and its dependencies will be installed in your home directory in `~/.local/lib/python<version>/site-packages`. Do not use the `pip3` command even if the directions you are following tell you to do so (use `pip` instead). Below is a sample Slurm script (job.slurm) that can be used to run your Python script (myscript.py):
+Each package and its dependencies will be installed in your home directory in `~/.local/lib/python<version>/site-packages`. Below is a sample Slurm script (job.slurm) that can be used to run your Python script (myscript.py):
 
 ```bash
 #!/bin/bash
@@ -50,7 +50,7 @@ $ conda create --name myenv <package-1> <package-2> ... <package-N>
 $ conda activate myenv
 ```
 
-Each package and its dependencies will be installed locally in `~/.conda/pkgs`. On the command line, use `$ conda deactivate` to leave the active environment and return to the base environment. Below is a sample Slurm script:
+Each package and its dependencies will be installed locally in `~/.conda/pkgs`. Consider replacing `myenv` with an environment name that is more specific to your work. On the command line, use `$ conda deactivate` to leave the active environment and return to the base environment. Below is a sample Slurm script:
 
 ```bash
 #!/bin/bash
@@ -72,7 +72,7 @@ python myscript.py
 
 If the installation failed and packages were downloaded then you should remove those packages before proceeding (see contents of `~/.conda/pkgs`). If both the pip and conda procedures failed then continue reading or see the [Getting Help](#getting_help) section at the bottom of this page.
 
-If for some reason you are trying to install a Python 2 package then use `module load anaconda` instead of `anaconda3` in the directions above. Note that Python 2 will be unsupported beginning on January 1, 2020.
+If for some reason you are trying to install a Python 2 package then use `module load anaconda` instead of `anaconda3` in the directions above. Note that Python 2 has been unsupported since January 1, 2020.
 
 ## Introduction
 
