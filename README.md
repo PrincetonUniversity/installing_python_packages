@@ -262,7 +262,7 @@ Note the `--user` option is omitted since the packages will be installed locally
 module load anaconda3
 source </path/to>/myenv/bin/activate
 
-srun python myscript.py
+python myscript.py
 ```
 
 At the command line, to leave the environment run `$ deactivate`
