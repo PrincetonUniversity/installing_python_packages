@@ -419,14 +419,13 @@ $ module load anaconda3
 $ conda create --name tf-cpu tensorflow matplotlib
 ```
 
-Then go to MyAdroit and launch a Jupyter notebook by entering the "Number of hours" and so on and then click on "Launch". When your session is ready click "Connect to Jupyter". On the next screen, choose "New" in the upper right and then `tf-cpu` in the drop-down menu. Your `tf-cpu` environment will be active when the notebook is launched. To see the packages in your Conda environment, run this command in a cell:
+Then go to MyAdroit and launch a Jupyter notebook by entering the "Number of hours" and so on and then click on "Launch". When your session is ready click "Connect to Jupyter". On the next screen, choose "New" in the upper right and then `tf-cpu` in the drop-down menu. Your `tf-cpu` environment will be active when the notebook becomes available. To see the packages in your Conda environment, run this command in a cell:
 
 ```
 %conda list
 ```
 
 Note that Jupyter notebooks via OnDemand run on the compute nodes where internet access is turned off for security purposes. This means that you will not be able to install packages. All installations must be done on the head node (i.e., `ssh adroit`).
-
 
 ## Common Package Installation Examples
 
