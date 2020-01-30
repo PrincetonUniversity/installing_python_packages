@@ -350,7 +350,7 @@ Much more can be done with conda as a <a href="https://docs.conda.io/projects/co
 
 If your package exists on PyPI and Anaconda Cloud then how do you decide which to install from? The good news is that in most cases it doesn't matter. However, if you are on Windows then you should prefer conda since the packages are pre-built. For Linux if it is a simple package that doesn't do intensive computations then `pip` would be a good choice. If the package needs to be fast or if the dependencies are quite involved then favor `conda`. Because conda packages are pre-compiled, some of them cannot take full advantage of the vector units on our CPUs. However, many scientific conda packages are linked against the Intel MKL which leads to improved performance over pip installs. Conda packages may lag behind pip packages in terms of versioning. In many cases, the developers of the package will make a recommendation on their website.
 
-## Installing Python packages from source
+## Installing Python Packages from Source
 
 In some cases you will be provided with the source code for your package. To install from source do:
 
@@ -408,6 +408,22 @@ To begin a session, click on "Interactive Apps" and then "Jupyter". You will nee
 ![jupyter](https://tigress-web.princeton.edu/~jdh4/jupyter_notebook.png)
 
 If you need more control over the session or if you need to use a GPU then see [this post](https://oncomputingwell.princeton.edu/2018/05/jupyter-on-the-cluster).
+
+### Using Conda environments on MyAdroit and MyDella
+
+First, create a conda environment on Adroit or Della. For example:
+
+```
+$ ssh <YourNetID>@adroit.princeton.edu
+$ module load anaconda3
+$ conda create --name tf-cpu tensorflow matplotlib
+```
+
+Then go to MyAdroit and launch a Jupyter notebook by entering the "Number of hours" and so on and then click on "Launch". when your session is ready click "Connect to Jupyter". On the next screen, choose "New" in the upper right and then `tf-cpu` in the drop-down menu. Your `tf-cpu` environment will be active when the notebook is launched. To see the packages in your conda environment, run this command in a cell:
+
+```
+%conda list
+```
 
 ## Common Package Installation Examples
 
