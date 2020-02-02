@@ -373,7 +373,7 @@ Both <a href="https://packaging.python.org/tutorials/packaging-projects/">PyPI</
 
 ## Where to Store Your Files
 
-You should run your jobs out of `/scratch/gpfs/<NetID>` on the HPC clusters. These filesystems are very fast and provide vast amounts of storage. Do not run jobs out of `/tigress` or `/projects`. That is, you should never be writing the output of actively running jobs to those filesystems. `/tigress` and `/projects` are slow and should only be used for backing up the files that you produce on `/scratch/gpfs`. Your `/home` directory on all clusters is small and it should only be used for storing source code and executables.
+You should run your jobs out of `/scratch/gpfs/<NetID>` on the HPC clusters. These filesystems are very fast and provide vast amounts of storage. **Do not run jobs out of `/tigress` or `/projects`. That is, you should never be writing the output of actively running jobs to those filesystems.** `/tigress` and `/projects` are slow and should only be used for backing up the files that you produce on `/scratch/gpfs`. Your `/home` directory on all clusters is small and it should only be used for storing source code and executables.
 
 The commands below give you an idea of how to properly run a Python job:
 
@@ -396,8 +396,6 @@ For large transfers consider using `rsync` instead of `cp`. Most users only do b
 The diagram below gives an overview of the filesystems:
 
 ![tigress](https://tigress-web.princeton.edu/~jdh4/hpc_princeton_filesystems.png)
-
-There is also special hardware on each node called an NVMe card. These cards allow for much faster reads and writes in comparison to `/scratch/gpfs/<NetID>`. To take advantage of these storage devices, carry out your I/O on `/scratch`. Be sure to transfer your data to `/scratch/gpfs/<NetID>` before the job ends. This can be done by adding a line like the following to the bottom of your Slurm script: `cp /scratch/*.outfiles /scratch/gpfs/<NetID>/<JobDir>`. A great use of the NVMe's would be training a deep convolutional neural network. One should see a performance boost by first copying the images to `/scratch` at the start of the job and then doing the training by drawing batches from those files. In this case the images should be deleted before the job ends.
 
 ## Running Jupyter Notebooks on the HPC Clusters
 
