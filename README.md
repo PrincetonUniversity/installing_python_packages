@@ -563,6 +563,7 @@ Be sure to include `module load anaconda3 openmpi/gcc/3.1.3/64` in your Slurm sc
    ```
    $ module load anaconda3
    $ conda create --name myenv python=3.6
+   $ conda activate myenv
    $ pip install scitools
    ```
    
