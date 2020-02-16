@@ -456,6 +456,34 @@ Be sure to include `module load anaconda3` in your Slurm script.
 If you get an error like "CompileError: command 'gcc' failed with exit status 1" then try again after loading the rh module:
 `$ module load rh/devtoolset/7`. The rh module provides a newer compiler suite.
 
+### Deeplabcut
+
+```bash
+$ ssh -Y <YourNetID>@tigergpu.princeton.edu
+$ module load hdf5/gcc/1.8.16 anaconda3/2019.10 cudatoolkit/9.2 cudnn/cuda-9.2/7.3.1
+$ export HDF5_DIR=/usr/local/hdf5/gcc/1.8.16
+$ conda create --name deeplabcut-env python=3.6  wxPython=4.0.3
+$ conda activate deeplabcut-env
+$ pip install deeplabcut
+$ pip install tensorflow-gpu==1.8
+```
+
+Note that some warnings will be produced when deeplabcut is imported in Python. You will need to add the “export HDF5_DIR …” command to your ~/.bashrc file. By using `ssh -Y` the error of `Cannont load backend 'TkAgg'` will not occur.
+
+### Lenstools
+
+```bash
+$ module load anaconda3
+$ conda create --name lenstools-env numpy scipy pandas matplotlib astropy
+$ conda activate lenstools-env
+$ module load rh/devtoolset/8 openmpi/gcc/3.1.5/64 gsl/2.4 
+$ export MPICC=`which mpicc`
+$ pip install mpi4py
+$ pip install emcee==2.2.1
+$ pip install lenstools
+```
+
+Note that you will receive warnings when `lenstools` is imported in Python.
 
 ### TensorFlow
 
