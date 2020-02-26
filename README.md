@@ -425,6 +425,15 @@ Then go to MyAdroit and launch a Jupyter notebook by entering the "Number of hou
 
 Note that Jupyter notebooks via OnDemand run on the compute nodes where internet access is turned off for security purposes. This means that you will not be able to install packages. All installations must be done on the head node (i.e., `ssh adroit`).
 
+## Using the PyCharm Debugger on the HPC Clusters
+
+The video below explains how to run the PyCharm debugger on a TigerGPU node. The same procedure can be used for the other clusters.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=0XmZsfixAdw" target="_blank">
+<img src="http://img.youtube.com/vi/0XmZsfixAdw/0.jpg" alt="PyCharm" width="640" height="360" border="0" /></a>
+
+PyCharm for Linux is available [here](https://www.jetbrains.com/pycharm/download/#section=linux). While the video uses the Community Edition, you can get the professional edition for free by supplying your `.edu` email address.
+
 ## Common Package Installation Examples
 
 ### FEniCS
